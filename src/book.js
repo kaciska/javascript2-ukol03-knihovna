@@ -1,3 +1,5 @@
+import Library from './library';
+
 /*
   Třída pro jednu knihu v knihovně.
 

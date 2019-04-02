@@ -1,3 +1,6 @@
+import Book from './book';
+
+
 /*
   Třída pro knihovnu.
 
@@ -60,4 +63,30 @@ export default class Library {
     }
   }
 
-}
+  finishCurrentBook() {
+    if (this.currentBook !== null) {
+      this.currentBook.read();
+      this.lastBook = this.currentBook;
+      this.currentBook = null;
+      this.unreadBooks = this.unreadBooks - 1;
+
+      console.log(this.currentBook);
+      console.log(this.lastBook);
+      console.log(this.unreadBooks);
+      console.log(this.nextBook);
+    }
+  }
+
+
+  listUnreadBooks() {
+    
+    let test = this.bookList.filter(vyberKnihu);
+    console.log(test);
+
+    function vyberKnihu(book) {
+      return book.isRead !== true;
+      }
+    }
+  }  
+
+ 
